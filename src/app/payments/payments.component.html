@@ -1,0 +1,49 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        payments
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z1" >
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>id</th>
+          <th mat-cell *matCellDef="let element">{{element.id}}</th>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <th mat-cell *matCellDef="let element">{{element.date}}</th>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef>amount</th>
+          <th mat-cell *matCellDef="let element">{{element.amount}}</th>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>type</th>
+          <th mat-cell *matCellDef="let element">{{element.type}}</th>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <th mat-cell *matCellDef="let element">{{element.status}}</th>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef>Student</th>
+          <th mat-cell *matCellDef="let element">{{element.student.firstName}}</th>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="dispalyedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: dispalyedColumns;"></tr>
+
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+</div>
